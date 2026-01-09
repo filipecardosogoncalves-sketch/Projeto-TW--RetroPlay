@@ -1,0 +1,32 @@
+
+main{
+  color: aliceblue;
+}
+hr{
+    margin-inline: 15px;
+}
+h3{
+    text-align: center;
+    cursor: pointer;
+}
+body { 
+    background: linear-gradient(to bottom, #000000, #444444); 
+}
+#cinema_noir{
+    background-image:radial-gradient(circle, rgba(0,0,0,0) 30%, rgba(0,0,0,0.6) 100%), url("https://files.123freevectors.com/wp-content/original/143950-pastel-brown-vintage-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid #B8860B;
+    border-radius: 3px;
+    padding: 15px;
+}
+#movies img {
+    cursor: pointer;
+}
+/*CopyRight*/
+
+footer{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+}

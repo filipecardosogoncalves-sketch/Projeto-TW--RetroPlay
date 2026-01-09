@@ -41,3 +41,6 @@ function filterDecade(start, end) {
 
 showMovies(filmes);
 
+function alugar(movieName){
+  
+}

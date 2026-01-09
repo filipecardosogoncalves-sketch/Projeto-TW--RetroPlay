@@ -28,6 +28,7 @@ function openMovieModal(index) {
     <p><b>Director:</b> ${movie.diretor}</p>
     <p><b>Year:</b> ${movie.ano}</p>
     <p><b>Category:</b> ${movie.categoria}</p>
+    <button valor='${movie.name}'>alugar</button>
   `;
 
   modal.show();
@@ -39,3 +40,4 @@ function filterDecade(start, end) {
 }
 
 showMovies(filmes);
+

@@ -22,14 +22,20 @@ function openMovieModal(index) {
 
   modalcont.innerHTML = `
     <h3 class="text-center mb-3 text-warning">${movie.nome}</h3>
-    <img src="${movie.destaque}" class="img-fluid mb-3 border border-white">
+    <img src="${movie.destaque}" alt="${movie.nome}" class="img-fluid mb-3 border border-white">
     <h4 class="text-center text-warning">Resumo</h4>
     <p class="mb-5">${movie.sinopse}</p>
     <p><b>Director:</b> ${movie.diretor}</p>
     <p><b>Year:</b> ${movie.ano}</p>
     <p><b>Category:</b> ${movie.categoria}</p>
+<<<<<<< HEAD
     <button id="alugarBt" onclick="alugar()" value="${index}" >alugar</button>
     `
+=======
+    <button class="btn btn-warning m-1 btn-lg" valor='${movie.name}'>Alugar</button>
+  `;
+
+>>>>>>> 475f426dcad9e98d0da020afb456454dce897387
   modal.show();
 }
 

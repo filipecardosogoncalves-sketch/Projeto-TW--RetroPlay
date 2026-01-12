@@ -28,9 +28,8 @@ function openMovieModal(index) {
     <p><b>Director:</b> ${movie.diretor}</p>
     <p><b>Year:</b> ${movie.ano}</p>
     <p><b>Category:</b> ${movie.categoria}</p>
-    <button valor='${movie.name}'>alugar</button>
-  `;
-
+    <button id="alugarBt" onclick="alugar()" value="${index}" >alugar</button>
+    `
   modal.show();
 }
 
@@ -41,6 +40,13 @@ function filterDecade(start, end) {
 
 showMovies(filmes);
 
-function alugar(movieName){
-  
+function alugar(){
+  let index = document.getElementById("alugarBt").value
+  let movie = filmes[index];
+  modalcont.innerHTML=`
+  <h3 class="text-center mb-3 text-warning">${movie.nome}</h3>
+  <p><b>Valor</b> 5 conto</p>
+  <button data-bs-toggle="modal" oncl>Confirmar compra</button>
+  <button onclick='openMovieModal(${index})'>voltar</button>
+  `
 }

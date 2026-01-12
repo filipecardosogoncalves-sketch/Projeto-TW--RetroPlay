@@ -3,9 +3,7 @@ let modal = new bootstrap.Modal(document.getElementById("movieModal"));
 let modalcont = document.getElementById("modalContent");
 let modalTitle = document.getElementById("Title");
 
-document.getElementById("catalogo").addEventListener("click", () => { 
-  showMovies(filmes); 
-});
+document.getElementById("catalogo").addEventListener("click", () => { showMovies(filmes) });
 
 function showMovies(List) {
   filmesDiv.innerHTML = "";
@@ -15,6 +13,7 @@ function showMovies(List) {
       <img src="${movie.capa}" onclick="openMovieModal(${index})" class="border border-white" style="width:150px; height:220px; object-fit:cover;">
     `;
   });
+
 }
 
 function openMovieModal(index) {
@@ -24,13 +23,14 @@ function openMovieModal(index) {
     <h3 class="text-center mb-3 text-warning">${movie.nome}</h3>
     <img src="${movie.destaque}" alt="${movie.nome}" class="img-fluid mb-3 border border-white">
     <h4 class="text-center text-warning">Resumo</h4>
+    <button id="alugarBt" onclick="alugar()" value="${index}" >alugar</button>
     <p class="mb-5">${movie.sinopse}</p>
     <p><b>Director:</b> ${movie.diretor}</p>
     <p><b>Year:</b> ${movie.ano}</p>
     <p><b>Category:</b> ${movie.categoria}</p>
-    <button id="alugarBt" onclick="alugar()" value="${index}" >alugar</button>
-    `
+    `;
   modal.show();
+
 }
 
 function filterDecade(start, end) {
@@ -45,8 +45,11 @@ function alugar(){
   let movie = filmes[index];
   modalcont.innerHTML=`
   <h3 class="text-center mb-3 text-warning">${movie.nome}</h3>
-  <p><b>Valor</b> 5 conto</p>
+  <img src="${movie.capa}" alt="${movie.nome}" class="img-fluid mb-3 border border-white" width="100px">
+  <p><b>Alugar</b></p>
+  <p><b>2,99€</b></p>
+  <p>Após o aluguer, este filme permanecerá disponível na sua conta durante 30 dias. Nesse período poderá ver os filmes as vezes que desejar.</p>
   <button data-bs-toggle="modal" oncl>Confirmar compra</button>
   <button onclick='openMovieModal(${index})'>voltar</button>
-  `
+  `;
 }

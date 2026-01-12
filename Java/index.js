@@ -28,14 +28,8 @@ function openMovieModal(index) {
     <p><b>Director:</b> ${movie.diretor}</p>
     <p><b>Year:</b> ${movie.ano}</p>
     <p><b>Category:</b> ${movie.categoria}</p>
-<<<<<<< HEAD
     <button id="alugarBt" onclick="alugar()" value="${index}" >alugar</button>
     `
-=======
-    <button class="btn btn-warning m-1 btn-lg" valor='${movie.name}'>Alugar</button>
-  `;
-
->>>>>>> 475f426dcad9e98d0da020afb456454dce897387
   modal.show();
 }
 

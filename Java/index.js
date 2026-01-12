@@ -2,6 +2,8 @@ let filmesDiv = document.getElementById("movies");
 let modal = new bootstrap.Modal(document.getElementById("movieModal"));
 let modalcont = document.getElementById("modalContent");
 let modalTitle = document.getElementById("Title");
+let div = document.getElementById("Coment_section");
+// let filtroMovies = []
 
 document.getElementById("catalogo").addEventListener("click", () => { 
   showMovies(filmes); 
@@ -11,6 +13,8 @@ function showMovies(List) {
   filmesDiv.innerHTML = "";
 
   List.forEach((movie, index) => {
+    console.log(index);
+    
     filmesDiv.innerHTML += `
       <img src="${movie.capa}" onclick="openMovieModal(${index})" class="border border-white" style="width:150px; height:220px; object-fit:cover;">
     `;
@@ -18,8 +22,8 @@ function showMovies(List) {
 }
 
 function openMovieModal(index) {
-  let movie = filmes[index];
-
+  console.log(index, filmes);  
+  let movie = filtroMovies[index]
   modalcont.innerHTML = `
     <h3 class="text-center mb-3 text-warning">${movie.nome}</h3>
     <img src="${movie.destaque}" alt="${movie.nome}" class="img-fluid mb-3 border border-white">
@@ -34,7 +38,7 @@ function openMovieModal(index) {
 }
 
 function filterDecade(start, end) {
-  let filtroMovies = filmes.filter(movie => movie.ano >= start && movie.ano <= end);
+  filtroMovies = filmes.filter(movie => (movie.ano >= start && movie.ano <= end));
   showMovies(filtroMovies);
 }
 
@@ -49,4 +53,14 @@ function alugar(){
   <button data-bs-toggle="modal" oncl>Confirmar compra</button>
   <button onclick='openMovieModal(${index})'>voltar</button>
   `
+}
+
+function add_coment() {
+  let comentario = document.getElementById("comentário").value;
+
+  div.innerHTML+=`
+    <div class="">
+      <p>${comentario}</p>
+    </div>
+  `;
 }

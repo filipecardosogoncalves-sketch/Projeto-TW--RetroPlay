@@ -5,7 +5,6 @@ let modalTitle = document.getElementById("Title");
 let div = document.getElementById("Coment_section");
 let isLoggedIn = false;
 let loginModal = new bootstrap.Modal(document.getElementById("loginModal"));
-
                                     
 
 document.getElementById("catalogo").addEventListener("click", () => { showMovies(filmes) });
@@ -18,12 +17,13 @@ function showMovies(List) {
       <img src="${movie.capa}" onclick="openMovieModal(${index})" class="border border-white" style="width:150px; height:220px; object-fit:cover;">
     `;
   });
-
+  
 }
+showMovies(filmes);
+
 
 function openMovieModal(index) {
   let movie = filtroMovies[index]
-
 
   modalcont.innerHTML = `
     <h3 class="text-center mb-3 text-warning">${movie.nome}</h3>
@@ -39,13 +39,12 @@ function openMovieModal(index) {
 
 }
 
-function filterDecade(start, end) {
+
+function filterDecade(start = 0, end=1999) {
   filtroMovies = filmes.filter(movie => (movie.ano >= start && movie.ano <= end));
   showMovies(filtroMovies);
 }
 
-
-showMovies(filmes);
 
 function alugar(){
   if (!isLoggedIn) { 
@@ -56,7 +55,7 @@ function alugar(){
 
 
   let index = document.getElementById("alugarBt").value
-  let movie = filmes[index];
+  let movie = filtroMovies[index]
   modalcont.innerHTML=`
   <h3 class="text-center mb-3 text-warning">${movie.nome}</h3>
   <img src="${movie.capa}" alt="${movie.nome}" class="img-fluid mb-3 border border-white" width="100px">
@@ -69,6 +68,7 @@ function alugar(){
   </div>
   `;
 }
+
 
 function add_coment() {
   if (!isLoggedIn) { 
@@ -87,6 +87,7 @@ function add_coment() {
     </div>
   `;
 }
+
 
 function submitLogin() {
   let user = document.getElementById("username").value;

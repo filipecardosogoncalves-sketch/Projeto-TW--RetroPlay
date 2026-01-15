@@ -50,15 +50,7 @@
    <!-- corousel -->
    <div id="retroCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
 
-  <!-- INDICADORES -->
-      <div class="carousel-indicators">
-         <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="0" class="active"></button>
-         <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="1"></button>
-         <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="2"></button>
-         <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="3"></button>
-         <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="4"></button>
-      </div>
-
+  
       <div class="carousel-inner">
 
             <!-- INDICADORES -->
@@ -153,7 +145,7 @@
 
       <!-- filtro -->
       <div class="text-center mt-3 mb-5">
-       <button id="catalogo" class="btn btn-dark m-1 btn-lg">Todos</button>
+       <button id="catalogo" onclick="filterDecade(0,1999)" class="btn btn-dark m-1 btn-lg">Todos</button>
        <button onclick="filterDecade(1990,1999)" class="btn btn-dark m-1 btn-lg">1990s</button>
        <button onclick="filterDecade(1980,1989)" class="btn btn-dark m-1 btn-lg">1980s</button>
        <button onclick="filterDecade(1970,1979)" class="btn btn-dark m-1 btn-lg">1970s</button>

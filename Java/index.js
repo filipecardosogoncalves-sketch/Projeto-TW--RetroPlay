@@ -64,10 +64,14 @@ function alugar(){
   <p><b>2,99€</b></p>
   <p>Após o aluguer, este filme permanecerá disponível na sua conta durante 30 dias. Nesse período poderá ver os filmes as vezes que desejar.</p>
   <div class="g-5">
-    <button data-bs-toggle="modal" oncl class="btn btn-warning btn-lg rounded-pill shadow">Confirmar compra</button>
+    <button data-bs-toggle="modal" onclick="compra()" class="btn btn-warning btn-lg rounded-pill shadow">Confirmar compra</button>
     <button onclick='openMovieModal(${index})' class="btn btn-warning btn-lg rounded-pill shadow">Voltar</button>
   </div>
   `;
+}
+
+function compra() {
+  alert("Compra efetuda com sucesso")
 }
 
 function add_coment() {

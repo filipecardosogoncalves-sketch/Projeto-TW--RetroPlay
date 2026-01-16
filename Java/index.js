@@ -2,7 +2,6 @@ let filmesDiv = document.getElementById("movies");
 let modal = new bootstrap.Modal(document.getElementById("movieModal"));
 let modalcont = document.getElementById("modalContent");
 let modalTitle = document.getElementById("Title");
-let div = document.getElementById("Coment_section");
 let isLoggedIn = false;
 let loginModal = new bootstrap.Modal(document.getElementById("loginModal"));
                                     
@@ -34,6 +33,19 @@ function openMovieModal(index) {
     <p><b>Director:</b> ${movie.diretor}</p>
     <p><b>Year:</b> ${movie.ano}</p>
     <p><b>Category:</b> ${movie.categoria}</p>
+    <div> 
+        <p class="fs-4 mb-0">Comentários</p> 
+         </div>
+
+         <div class="mb-3">
+          <label for="comentário" class="form-label"></label>
+          <textarea class="form-control" id="comentário" rows="4" placeholder="Escreve o seu comentário" maxlength="300"></textarea>
+         </div>
+
+        <button type="submit" class="btn btn-light" onclick="add_coment()">Adicionar</button>
+
+        <div id="Coment_section"></div>
+    </div>
     `;
   modal.show();
 
@@ -69,12 +81,9 @@ function alugar(){
   `;
 }
 
-<<<<<<< HEAD
 function compra() {
   alert("Compra efetuda com sucesso")
 }
-=======
->>>>>>> 511919cb031acba0e737e64de42008ccc3ff7992
 
 function add_coment() {
   if (!isLoggedIn) { 
@@ -83,6 +92,8 @@ function add_coment() {
     return; 
   }
   let user = document.getElementById("username").value;
+
+  let div = document.getElementById("Coment_section");
 
   let comentario = document.getElementById("comentário").value;
   div.innerHTML+=`
@@ -106,6 +117,6 @@ function submitLogin() {
     modal.show()
     alert("Login efetuado com sucesso!");
   } else {
-    alert("Credenciais inválidas.");
+    alert("Username ou password inválidas.");
   }
 }

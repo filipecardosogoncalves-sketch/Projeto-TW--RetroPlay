@@ -69,12 +69,9 @@ function alugar(){
   `;
 }
 
-<<<<<<< HEAD
 function compra() {
   alert("Compra efetuda com sucesso")
 }
-=======
->>>>>>> 511919cb031acba0e737e64de42008ccc3ff7992
 
 function add_coment() {
   if (!isLoggedIn) { 

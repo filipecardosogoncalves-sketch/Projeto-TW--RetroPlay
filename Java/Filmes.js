@@ -635,3 +635,4 @@ let filmes = [
 ];
 
 showMovies(filmes);
+let filtroMovies=filmes

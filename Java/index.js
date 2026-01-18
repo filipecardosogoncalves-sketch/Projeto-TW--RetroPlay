@@ -114,9 +114,89 @@ function submitLogin() {
   if (user === "Filipe" && pass === "1234") {
     isLoggedIn = true;
     loginModal.hide();
-    modal.show()
     alert("Login efetuado com sucesso!");
-  } else {
+    navBar.innerHTML+=`<button onclick="AdicionarFilme()">adm</button>`
+    logan.innerHTML=`<div class='text-primary'>Modo de adiministrador: Filipe</div>`
+    
+  } 
+  if (user === "Gian" && pass === "1234") {
+    isLoggedIn = true;
+    loginModal.hide();
+    alert("Login efetuado com sucesso!");
+    logan.innerHTML=`<div class='text-light'>Bem vindo Gian</div>`
+    
+  } 
+  
+  else {
     alert("Username ou password inválidas.");
   }
+}
+
+
+
+function AdicionarFilme(){
+   modal.show()
+   modalcont.innerHTML =`
+    <form>
+      <h3 class="text-center mb-4">Adicionar filme novo</h3>
+
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome do filme</label>
+        <input type="text" class="form-control" id="nome" placeholder="Pulp Fiction">
+      </div>
+
+      <div class="mb-3">
+        <label for="ano" class="form-label">Ano de lançamento</label>
+        <input type="number" class="form-control" id="ano" placeholder="1994">
+      </div>
+
+      <div class="mb-3">
+        <label for="diretor" class="form-label">Diretor</label>
+        <input type="text" class="form-control" id="diretor" placeholder="Quentin Tarantino">
+      </div>
+
+      <div class="mb-3">
+        <label for="categoria" class="form-label">Categoria</label>
+        <input type="text" class="form-control" id="categoria" placeholder="Crime / Drama / Cult">
+      </div>
+
+      <div class="mb-3">
+        <label for="sinopse" class="form-label">Sinopse</label>
+        <textarea class="form-control" id="sinopse" placeholder="Histórias entrelaçadas de crime, moralidade e redenção em Los Angeles. A narrativa não linear acompanha assassinos profissionais, um pugilista em fuga, um casal de assaltantes e personagens excêntricos que se cruzam de forma inesperada. Com diálogos afiados, humor negro e momentos icónicos, o filme explora escolhas, consequências e o absurdo da vida criminosa."></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="capa" class="form-label">Link para a imagem da capa</label>
+        <input type="url" class="form-control" id="capa" placeholder="">
+      </div>
+
+       <div class="mb-3">
+        <label for="destaque" class="form-label">Link para a imagem da destaque</label>
+        <input type="url" class="form-control" id="destaque" placeholder="">
+      </div>
+
+      <button id='enviar' type='submit' class="btn btn-primary w-100 mt-5">Adicionar filme</button>
+    </form>`
+  
+document.getElementById('enviar').addEventListener("click",add)
+}
+function add(e){
+   e.preventDefault()
+   modal.hide()
+   let nome = document.getElementById("nome").value
+   let ano = document.getElementById("ano").value
+   let diretor = document.getElementById("diretor").value
+   let categoria = document.getElementById("categoria").value
+   let sinopse = document.getElementById("sinopse").value
+   let capa = document.getElementById("capa").value
+   let destaque = document.getElementById("destaque").value
+   filmes.push({
+    nome:nome,
+    ano:ano,
+    diretor:diretor,
+    categoria:categoria,
+    sinopse:sinopse,
+    capa:capa,
+    destaque:destaque})
+   showMovies(filmes)
 }

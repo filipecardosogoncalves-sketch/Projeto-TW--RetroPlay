@@ -28,6 +28,14 @@ nav{
   cursor: pointer;
   margin-right: 20px;
 }
+
+@media screen and (min-width: 768px){
+  #textoDeEntrada{
+  display: none;
+  }
+}
+
+
 @media screen and (max-width: 768px) {
   .links {
     display: none;
@@ -36,15 +44,29 @@ nav{
   .menu {
     display: block;
   }
+  #textoDeEntrada{
+  display: block;
+  }
 }
+
 /*NavBar e introdução*/
 .flex-container{
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  padding: 15px;
-  word-spacing: 20px;
+
+
+}
+
+#botoesDoCabecalio{
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: end;
+}
+
+#textoDeEntrada{
+  padding-right: 10px;
+
 }
 
 /*RetroPlay*/

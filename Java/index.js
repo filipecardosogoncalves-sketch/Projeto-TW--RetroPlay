@@ -117,13 +117,17 @@ function submitLogin() {
     alert("Login efetuado com sucesso!");
     navBar.innerHTML+=`<button onclick="AdicionarFilme()">adm</button>`
     logan.innerHTML=`<div class='text-primary'>Modo de adiministrador: Filipe</div>`
+    textoDeEntrada.innerHTML=`<div class="text-primary">Filipe Adm</div>`
+     BTperfil.innerHTML=``
     
   } 
-  if (user === "Gian" && pass === "1234") {
+  else if (user === "Gian" && pass === "1234") {
     isLoggedIn = true;
     loginModal.hide();
     alert("Login efetuado com sucesso!");
     logan.innerHTML=`<div class='text-light'>Bem vindo Gian</div>`
+     BTperfil.innerHTML=``
+     textoDeEntrada.innerHTML=`<div class="text-light">Gian</div>`
     
   } 
   

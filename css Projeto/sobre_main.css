@@ -1,0 +1,39 @@
+main{padding: 100px;}
+.txt{
+    font-size: 24px;
+    text-align:justify;
+}
+
+li{
+    padding-left: 10px;
+    font-size: large;
+}
+
+h4{
+    text-decoration: dashed;
+    text-decoration: underline;
+}
+
+#equipa{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+
+    padding-top: 30px;
+    width: 75%;
+
+    justify-content: space-around
+    ;
+}
+
+@media screen and (max-width: 768px) {
+  #equipa {
+    flex-direction: column;
+    height: 900px;
+
+   
+  }}
+
+  

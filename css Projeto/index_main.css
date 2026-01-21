@@ -42,7 +42,7 @@ body {
     height: 400px;;
   }}
 
-  
+
 /* footer */
 footer{
     text-align: center;
@@ -59,6 +59,8 @@ footer{
 }
 
 #footerConfig{
+    text-decoration: underline;
+    font-size: medium;
     display: flex;
     flex-flow:row;
     align-items:center;

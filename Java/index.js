@@ -13,10 +13,9 @@ function showMovies(List) {
 
   List.forEach((movie, index) => {
     filmesDiv.innerHTML += `
-      <img src="${movie.capa}" onclick="openMovieModal(${index})" class="border border-white" style="width:150px; height:220px; object-fit:cover;">
+      <img src="${movie.capa}" onclick="openMovieModal(${index})" class="border border-white" style="width:150px; height:220px; object-fit:cover;" alt="${movie.nome}">
     `;
   });
-  
 }
 showMovies(filmes);
 
@@ -115,7 +114,7 @@ function submitLogin() {
     isLoggedIn = true;
     loginModal.hide();
     alert("Login efetuado com sucesso!");
-    navBar.innerHTML+=`<button onclick="AdicionarFilme()">adm</button>`
+    navBar.innerHTML+=`<button class="btn btn-warning btn-lg" onclick="AdicionarFilme()">Adm</button>`
     logan.innerHTML=`<div class='text-primary'>Modo de adiministrador: Filipe</div>`
     textoDeEntrada.innerHTML=`<div class="text-primary">Filipe Adm</div>`
      BTperfil.innerHTML=``

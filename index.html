@@ -18,7 +18,7 @@
       <!--nav -->
       <nav class="flex-container" id="navBar">
             <div id="cabeçalho">
-               <img src="imagens/logo com a escrita.png" alt="">
+               <img src="imagens/logo com a escrita.png" alt="logotipo">
             </div>
 
             <div id="botoesDoCabecalio">            
@@ -27,14 +27,14 @@
             </div>
 
             <div class="links" id="sobre">
-              <a href="sobre.html" target="_blank" class="btn btn-primary btn-blue btn-lg">Sobre</a>
+              <a href="sobre.html" target="_blank" class="btn btn-info btn-blue btn-lg">Sobre</a>
             </div>
 
-            <a id="BTperfil" onclick="loginModal.show()"><img class="menu" src="imagens/perfil.png" width="50px"></a>
+            <a id="BTperfil" onclick="loginModal.show()"><img class="menu" src="imagens/perfil.png" width="50px" alt="perfil"></a>
 
             <div id="textoDeEntrada"></div>
             
-            <a href="sobre.html" target="_blank"><img class="menu" src="imagens/info.png" width="50px"></a>
+            <a href="sobre.html" target="_blank"><img class="menu" src="imagens/info.png" width="50px" alt="info"></a>
         
             
             </div>
@@ -53,10 +53,12 @@
          <div class="modal-content p-3">
             <h5 class="modal-title text-center mb-3">Login</h5>
             <div class="mb-3">
-            <input type="text" id="username" class="form-control" placeholder="Username">
+              <label for="username" class="text">Username:</label>
+              <input type="text" id="username" class="form-control" placeholder="Username">
             </div>
             <div class="mb-3">
-            <input type="password" id="password" class="form-control" placeholder="Password">
+               <label for="password" class="text">Password:</label>
+               <input type="password" id="password" class="form-control" placeholder="Password">
             </div>
             <button class="btn btn-warning w-100" onclick="submitLogin()">Entrar</button>
          </div>
@@ -64,15 +66,16 @@
       </div>
 
    <!-- corousel -->
-   <div id="retroCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+   <div id="grad">
+      <div id="retroCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
 
             <!-- INDICADORES -->
             <div class="carousel-indicators">
-               <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="0" class="active"></button>
-               <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="1"></button>
-               <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="2"></button>
-               <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="3"></button>
-               <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="4"></button>
+               <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="0" class="active" aria-label="Shawhank Redemption"></button>
+               <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="1" aria-label="Godfather 1"></button>
+               <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="2" aria-label="Godfather 2"></button>
+               <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="3" aria-label="12 Angry Men"></button>
+               <button type="button" data-bs-target="#retroCarousel" data-bs-slide-to="4" aria-label="Schindler's List"></button>
             </div>
             <!-- fim de INDICADORES -->
 
@@ -81,8 +84,9 @@
 
                <div class="carousel-item active">
                   <img src="https://filipamoreno.com/wp-content/uploads/2019/10/the-shawshank-redemption-movie-lede.jpg" 
-                     class="d-block w-100" alt="Filme 1">
+                     class="d-block w-100" alt="Shawahnk Redemption" id="img10">
                   <div class="carousel-caption d-md-block">
+                  <div class="overlay"></div>
                   <h5 class="fs-2">Top 5 Filmes do seculo XX</h5>
                   <p class="fs-3">1 - Shawshank Redemption</p>
                   </div>
@@ -90,8 +94,7 @@
 
                <div class="carousel-item">
                   <img src="https://images.bauerhosting.com/legacy/media/6217/9535/9649/1207/f543/24bb/vote-hero.jpg?ar=16%3A9&fit=crop&crop=top&auto=format&w=1440&q=80" 
-                     class="d-block w-100" alt="Filme 2">
-
+                     class="d-block w-100" alt="Godfather 1">
                   <div class="carousel-caption d-md-block">
                   <h5 class="fs-2">Top 5 Filmes do seculo XX</h5>
                   <p class="fs-3">2 - Godfather I</p>
@@ -100,7 +103,7 @@
 
                <div class="carousel-item">
                   <img src="https://m.media-amazon.com/images/S/pv-target-images/111135eb34a021b419d09f2f149f3221e593a31e8d4bc27eec679fb9dd4768ee.jpg" 
-                     class="d-block w-100" alt="Filme 3">
+                     class="d-block w-100" alt="Godfather 2">
 
                   <div class="carousel-caption d-md-block">
                   <h5 class="fs-2">Top 5 Filmes do seculo XX</h5>
@@ -110,7 +113,7 @@
 
                <div class="carousel-item">
                   <img src="https://www.framerated.co.uk/frwpcontent/uploads/2022/04/12angrymen01.jpeg" 
-                     class="d-block w-100" alt="Filme 4">
+                     class="d-block w-100" alt="12 Angry Men">
                   <div class="carousel-caption d-md-block">
                   <h5 class="fs-2">Top 5 Filmes do seculo XX</h5>
                   <p class="fs-3">4 - 12 Angry Men</p>
@@ -119,28 +122,28 @@
 
                <div class="carousel-item">
                   <img src="https://www.ecartelera.com/carteles/fondos/2500/2529-n2.jpg" 
-                     class="d-block w-100" alt="Filme 5">
+                     class="d-block w-100" alt="Shindler's List">
                   
                   <div class="carousel-caption d-md-block">
                   <h5 class="fs-2">Top 5 Filmes do seculo XX</h5>
                   <p class="fs-3">5 - Lista de Shindler</p>
                   </div>
-               </div>
-
             </div>
+
+       </div>
             <!-- fim de carousel itens -->
          
         <!-- butão do carousel -->
-         <button class="carousel-control-prev" type="button" data-bs-target="#retroCarousel" data-bs-slide="prev">
+         <button class="carousel-control-prev" type="button" data-bs-target="#retroCarousel" data-bs-slide="prev">.
             <span class="carousel-control-prev-icon"></span>
          </button>
-         <button class="carousel-control-next" type="button" data-bs-target="#retroCarousel" data-bs-slide="next">
+         <button class="carousel-control-next" type="button" data-bs-target="#retroCarousel" data-bs-slide="next">.
             <span class="carousel-control-next-icon"></span>
          </button>
          <!-- fim do butão do carousel -->
 
+         </div>
       </div>
-   </div>
    <!-- fim do carousel -->
 
    </header>
@@ -151,7 +154,7 @@
 <!-- main -->
    <main>
       
-      <h3 class="fs-1">Catálogo</h3>
+      <h1 class="text-center">Catálogo</h1>
       
       <br>
 
@@ -178,7 +181,7 @@
                <div class="modal-header">
 
                  <h5 id="Title"></h5>
-                 <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                 <button class="btn-close btn-close-white" data-bs-dismiss="modal">.</button>
 
               </div>
              <!-- fim do modal header -->
@@ -200,7 +203,7 @@
 <!-- footer -->
    <footer>
       <div id="footerLogo">
-         <a href="#retroCarousel" target="_self"><img src="imagens/logo com a escrita.png"></a>
+         <a href="#retroCarousel" target="_self"><img src="imagens/logo com a escrita.png" alt="logotipo"></a>
       </div>
 
       <div id="footerConfig">

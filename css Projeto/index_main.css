@@ -39,8 +39,10 @@ body {
 }
 @media screen and (max-width: 768px) {
   .carousel-item img {
-    height: 200px;;
+    height: 400px;;
   }}
+
+  
 /* footer */
 footer{
     text-align: center;
@@ -63,3 +65,4 @@ footer{
     justify-content: center;
     justify-content: space-evenly;
 }
+

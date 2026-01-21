@@ -4,6 +4,7 @@ let modalcont = document.getElementById("modalContent");
 let modalTitle = document.getElementById("Title");
 let isLoggedIn = false;
 let loginModal = new bootstrap.Modal(document.getElementById("loginModal"));
+let bd 
                                     
 
 document.getElementById("catalogo").addEventListener("click", () => { showMovies(filmes) });
@@ -13,15 +14,46 @@ function showMovies(List) {
 
   List.forEach((movie, index) => {
     filmesDiv.innerHTML += `
-      <img src="${movie.capa}" onclick="openMovieModal(${index})" class="border border-white" style="width:150px; height:220px; object-fit:cover;" alt="${movie.nome}">
+            <img id='gg' tabindex="0" src="${movie.capa}" onclick="openMovieModal(${index})" class="border border-white" style="width:150px; height:220px; object-fit:cover;">
     `;
   });
+ 
+  bd = List
+  
+  console.log(bd);
+  
 }
-showMovies(filmes);
+
+// showMovies(filmes);
+document.addEventListener("DOMContentLoaded", ()=>{
+  console.log("estou aqui");
+  
+  let procura = document.querySelectorAll('#gg')
+  for(let proc of procura){
+    proc.addEventListener("click",()=>{
+      let src = proc.src
+      let id = bd.filter(item => item.capa == src)
+      let ind = bd.indexOf(id[0])
+      openMovieModal(ind)
+      console.log(ind)
+      
+    })
+    proc.addEventListener('keypress', function (e){
+      if (e.key == 'Enter'){
+      let src = proc.src
+      let id = bd.filter(item => item.capa == src)
+      let ind = bd.indexOf(id[0])
+      openMovieModal(ind)
+      console.log(ind)
+      
+    }})
+  }
+})
+
 
 
 function openMovieModal(index) {
-  let movie = filtroMovies[index]
+  let movie = bd[index]
 
   modalcont.innerHTML = `
     <h3 class="text-center mb-3 text-warning">${movie.nome}</h3>
@@ -53,7 +85,8 @@ function openMovieModal(index) {
 
 function filterDecade(start = 0, end=1999) {
   filtroMovies = filmes.filter(movie => (movie.ano >= start && movie.ano <= end));
-  showMovies(filtroMovies);
+  bd = filtroMovies
+  showMovies(bd);
 }
 
 
